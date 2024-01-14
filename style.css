@@ -1,0 +1,33 @@
+html {
+    background-image: linear-gradient(to bottom right, rgb(51, 45, 45), rgb(117, 117, 115));
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/*making everything center-aligned*/
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grid {
+    /*show bound*/
+    border: 1px solid black;
+    background-color: floralwhite;
+
+    /*flexbox*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.footer {
+    margin: 20px 0px 0px 0px;
+    color: aqua;
+    font-weight: bold;
+}
+
+
+
