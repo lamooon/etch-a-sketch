@@ -4,6 +4,10 @@ html {
     box-sizing: border-box;
 }
 
+h1 {
+    color: white;
+    font-family: "Arial Unicode MS";
+}
 /*making everything center-aligned*/
 body {
     display: flex;
@@ -22,6 +26,15 @@ body {
     align-items: center;
     margin: auto;
 }
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 8px;
+    margin: auto;
+}
+
 
 .footer {
     margin: 20px 0px 0px 0px;

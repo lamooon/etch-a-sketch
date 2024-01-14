@@ -17,9 +17,7 @@ function createGrid(n) {
     }
 }
 
-
-
-function mouseOver() {
+function mouseOverDefault() {
     const squares = document.querySelectorAll('.square');
 
     squares.forEach(square => {
@@ -30,7 +28,59 @@ function mouseOver() {
 
 }
 
+function mouseOverRandom() {
+    const squares = document.querySelectorAll('.square');
+
+    squares.forEach(square => {
+        square.addEventListener('mouseover', () => {
+            square.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+        });
+    });
+}
+
+function clearBoard() {
+    const squares = document.querySelectorAll('.square');
+
+    squares.forEach(square => {
+        square.style.backgroundColor = 'floralwhite';
+    })
+}
+
+function deleteBoard() {
+    document.querySelectorAll(".row").forEach((row) => row.parentNode.removeChild(row))
+}
+
+function buttonListener() {
+    const normal = document.querySelector('.normal');
+    const random = document.querySelector('.random');
+    const clear = document.querySelector('.clear');
+    const changeSize = document.querySelector('.changeSize');
+
+    clear.addEventListener('click', () => {
+        clearBoard();
+    });
+
+    changeSize.addEventListener('click', () => {
+       let n = prompt("Choose size of the grid from 1 to 100.");
+       deleteBoard();
+       createGrid(n);
+       mouseOverDefault();
+    });
+
+    normal.addEventListener('click', () => {
+        clearBoard();
+        mouseOverDefault();
+    });
+
+    random.addEventListener('click', () => {
+       clearBoard();
+       mouseOverRandom();
+    });
+
+
+}
 
 
 createGrid(16);
-mouseOver();
+mouseOverDefault();
+buttonListener();
